@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <style type="text/css" rel="stylesheet">
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #6abadeba;
+      font-family: 'Arial';
+    }
+
+    .login {
+      width: 382px;
+      height: 400px;
+      margin: auto;
+      margin: 10 0 0 400px;
+      padding: 30px;
+      background: #cf6016;
+      border-radius: 15px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #070b0c;
+      text-align: center;
+      padding: 20px;
+    }
+
+    label {
+      color: #08ffd1;
+      font-size: 17px;
+    }
+
+    #Email {
+      width: 300px;
+      height: 30px;
+      border: none;
+      border-radius: 3px;
+      padding-left: 8px;
+    }
+
+    #id_password {
+      width: 300px;
+      height: 30px;
+      border: none;
+      border-radius: 3px;
+      padding-left: 8px;
+    }
+
+    li {
+      list-style: none;
+      padding: 10px;
+      position: relative;
+      left: 110px;
+    }
+
+    a{
+      padding-left: 100px;
+      font-weight: bold;
+      color: black;
+    }
+    p{
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Register</h1>
+  
+    <form action="/users/register" method="POST">
+      <div class="login">
+        <ul>
+          <label for="name"> Enter Name</label>
+          <input type="name" name="name" id="Email" placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>" />
+          <br> <br>
+
+          <label for="email">Enter Email</label>
+          <input type="email" name="email" id="Email" placeholder="Enter Email"
+            value="<%= typeof email != 'undefined' ? email : '' %>" />
+          <br> <br>
+
+          <label> Password: </label>
+          <input type="password" name="password" id="id_password" placeholder="Create Password"
+            value="<%= typeof password != 'undefined' ? password : '' %>" />
+          <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+          <br> <br>
+
+          <label>Confirm Password</label>
+          <input type="password" name="password2" id="id_password" placeholder="Confirm Password"
+            value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+          <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+
+          <script>
+            const togglePassword = document.querySelector('#togglePassword');
+            const password = document.querySelector('#id_password')
+            togglePassword.addEventListener('click', function (e) {
+            
+              const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+              password.setAttribute('type', type);
+              this.classList.toggle('fa-eye-slash');
+            });
+          </script>
+          <br> <br>
+          <li>
+            <button type="submit" id="Button" class="btn btn-primary btn-block">
+              Register
+            </button>
+          </li>
+    </form>
+    <p>Have An Account? <a href="/users/login">Login</a></p>
+    </ul>
+  </div>
+</body>
+
+</html>

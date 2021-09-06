@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css" rel="stylesheet">
+  
+    body {
+      background-color: #6abadeba;
+      font-family: 'Arial';
+    }
+
+    .login {
+      width: 382px;
+      margin: auto;
+      margin: 20 0 0 400px;
+      padding: 80px;
+      background: #cf6016;
+      border-radius: 15px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #161d1f;
+      padding: 20px;
+    }
+
+    label {
+      color: #08ffd1;
+      font-size: 17px;
+    }
+
+     #Email {
+      width: 300px;
+      height: 30px;
+      border: none;
+      border-radius: 3px;
+      padding-left: 10px;
+    }
+
+    #log {
+      width: 300px;
+      height: 30px;
+      border: none;
+      border-radius: 17px;
+      padding-left: 7px;
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Login Page</h2><br>
+  <div class="login">
+    <form id="login" action="/users/login" method="POST">
+<ul>
+      <label><b>Email
+      </b> <br>
+      </label>
+      <input type="text" name = email id="Email" placeholder="Email">
+      <br><br>
+
+      <label><b>Password
+      </b> <br>
+      </label>
+      <input type="Password" name = password id="Email" placeholder="Password">
+    
+      <br><br> 
+
+      <button type="submit" class="btn btn-primary btn-block" id="log"  style="font-weight: bold; font-size: 15px;">Login Here </button>
+      <br><br>
+
+    </form>
+  </ul>
+  </div>
+
+</body>
+</html>

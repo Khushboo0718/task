@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css" rel="stylesheet">
+     body {
+      background-color: #6abadeba;
+      font-family: 'Arial';
+    }
+        ul {
+            margin: auto;
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        input {
+            
+            width: 60%;
+            padding: 10px;
+            font-size: 15px;
+        }
+        button
+        {
+            width: 20%;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        .myDIV h2 {
+            font-family: 'Candal', sans-serif;
+            font-size: 10px;
+        }
+
+        .header {
+            background-color: #f44336;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            width: 382px;
+            margin: auto;
+        }
+
+        ul li {
+            padding: 8px;
+            position: relative;
+            background: #eee;
+            font-size: 15px;
+            width: 382px;
+            margin: auto;
+
+        }
+
+        .a {
+            padding-left: 1100px;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="a">
+        <a href="/users/logout">Logout</a>
+      
+    </div>
+
+    <h1> Dashboard </h1>
+    
+
+    <div id="myDIV" class="header">
+        <h2>To-Do List</h2>
+        <input type="text" id="input" placeholder="What to do...">
+        <button onclick="newItem()" class="addBtn">Add</button>
+
+    </div>
+    <ul id="myUL">
+        <li>TUTORIAL 1</li>
+        <li>TUTORIAL 2</li>
+        <li>TUTORIAL 3</li>
+
+    </ul>
+
+    <script>
+
+        function newItem() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("input").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+            }
+            document.getElementById("myInput").value = "";
+        }
+    </script>
+</body>
+
+</html>
